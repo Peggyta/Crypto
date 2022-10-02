@@ -5,11 +5,10 @@ const Coin = ({name, image, price, symbol, marketCap, priceChange}) => {
         <div>
             <img src={image} alt={name} />
             <span>{name}</span>
-            <span>{symbol}</span>
-            <span>{price}</span>
+            <span>{symbol.toUpperCase()}</span>
+            <span>{price.toLocaleString()}</span>
             <span>{priceChange}</span>
-            <span>{marketCap}</span>
-            
+            <span>{marketCap.toLocaleString()}</span>     
         </div>
     );
 };
