@@ -1,6 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 //API
 import { getCoin } from '../services/api';
+//Components
+import Loading from './Loading';
 
 const Landing = () => {
     const[coins, setCoins] = useState([]);
@@ -11,9 +13,18 @@ const Landing = () => {
         fetchAPI()
     }, [])
     return (
-        <div>
-            
-        </div>
+        <>
+            <input type="text" placeholder="search..." />
+            {
+                coins.length ? 
+                <div>
+                    {
+                        coins.map (coin => <p key={coin.id}>{coin.name}</p>)
+                    }
+                </div> : 
+                    <Loading />
+            }
+        </>
     );
 };
 
