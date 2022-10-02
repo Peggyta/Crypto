@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 import { getCoin } from '../services/api';
 //Components
 import Loading from './Loading';
+import Coin from './Coin';
 
 const Landing = () => {
     const[coins, setCoins] = useState([]);
