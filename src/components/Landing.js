@@ -24,10 +24,10 @@ const searchedCoins = coins.filter(coin => coin.name.toLowerCase().includes(sear
 
     return (
         <>
-            <input type="text" placeholder="search..." value={search} onChange={searchHandler} />
+            <input className={styles.input} type="text" placeholder="  search token name" value={search} onChange={searchHandler} />
             {
                 coins.length ? 
-                <div>
+                <div className={styles.coinContainer} >
                     {
                         searchedCoins.map (coin => <Coin 
                             key={coin.id}

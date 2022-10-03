@@ -5,6 +5,7 @@
     background: linear-gradient(to right, #cac7b8, #f2f2f2, #eaeaea, #eaeaea);
     border-bottom: 1px solid rgb(199, 195, 195);
     padding: 15px 40px;
+    width: 70%;
 }
 
 .container:last-child {

@@ -1,0 +1,23 @@
+.coinContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+}
+
+.input {
+    width: 320px;
+    margin-top: 50px;
+    border: none;
+    background-color: rgb(243, 237, 237);
+    border-radius: 5px;
+    height: 30px;
+    transition: all 0.2s ease;
+}
+
+.input:focus {
+    outline: none;
+    background: rgb(211, 224, 236);
+    box-shadow: rgba(153, 162, 167, 0.24) 0px 3px 8px;
+}
