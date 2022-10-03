@@ -4,6 +4,8 @@ import { getCoin } from '../services/api';
 //Components
 import Loading from './Loading';
 import Coin from './Coin';
+//Styles
+import styles from './Landing.module.css';
 
 const Landing = () => {
     const[coins, setCoins] = useState([]);
