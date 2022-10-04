@@ -2,9 +2,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, #cac7b8, #f2f2f2, #eaeaea, #eaeaea);
-    border: 1px ridge rgb(161, 161, 167);
-    padding: 15px 40px;
+    background: #fff;
+    border-bottom: 1px ridge rgb(161, 161, 167);
+    padding: 15px 0;
     width: 70%;
 }
 
