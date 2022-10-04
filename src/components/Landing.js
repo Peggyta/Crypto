@@ -28,6 +28,13 @@ const searchedCoins = coins.filter(coin => coin.name.toLowerCase().includes(sear
             {
                 coins.length ? 
                 <div className={styles.coinContainer} >
+                    <div className={styles.headerContainer}>
+                        <span className={styles.coinName}><p>Coin</p></span>
+                        <span className={styles.coinAbbr}><p>Abbr</p></span>
+                        <span className={styles.coinPrice}><p>Price</p></span>
+                        <span className={styles.priceChange}><p>24h</p></span>
+                        <span className={styles.marketCap}><p>Mkt Cap</p></span>
+                    </div>
                     {
                         searchedCoins.map (coin => <Coin 
                             key={coin.id}
