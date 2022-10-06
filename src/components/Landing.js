@@ -4,6 +4,7 @@ import { getCoin } from '../services/api';
 //Components
 import Loading from './Loading';
 import Coin from './Coin';
+import Carousel from './Carousel';
 //Styles
 import styles from './Landing.module.css';
 
@@ -25,6 +26,7 @@ const searchedCoins = coins.filter(coin => coin.name.toLowerCase().includes(sear
     return (
         <>
             <input className={styles.input} type="text" placeholder="  search token name" value={search} onChange={searchHandler} />
+            <Carousel />
             {
                 coins.length ? 
                 <div className={styles.coinContainer} >
