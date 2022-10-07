@@ -2,13 +2,13 @@ import React, {useEffect, useState} from 'react';
 //Components
 import CoinIndex from './CoinIndex';
 //API
-import { getCoin } from '../services/api';
+import { indexCoin } from '../services/api';
 
 const Carousel = () => {
     const[trending, setTrending] = useState([]);
     useEffect(() => {
         const fetchAPI = async() => {
-            setTrending(await getCoin())
+            setTrending(await indexCoin())
         }
         fetchAPI()
     },[])
