@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-left: 100px;
+   
+}
+.container img {
+    width: 130px;
+}
+
+.textContainer {
+    color: aliceblue;
+    width: 80px;
+    padding-left: 10px;
+    text-align: left;
+}
+
+.symbol{
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.price {
+    display: block;
+    font-size: 0.9rem;
+}
