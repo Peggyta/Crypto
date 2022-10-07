@@ -17,16 +17,33 @@ const Carousel = () => {
         fetchAPI()
     },[])
 
+    const responsive = {
+        0: {
+          items: 2,
+        },
+        512: {
+          items: 4,
+        },
+      };
 
     return (
         <div className={styles.container}>
-             {
-                    trending.map(coin => <CoinIndex key={coin.id} 
-                    image={coin.image}
-                    symbol={coin.symbol}
-                    price={coin.current_price} />)
-                    }
-            
+            <AliceCarousel
+            infinite
+            disableButtonsControls
+            disableDotsControls
+            autoPlay
+            autoPlayInterval={1000}
+            animationDuration={2000}
+            mouseTracking
+            items= {
+                trending.map(coin => <CoinIndex key={coin.id} 
+                image={coin.image}
+                symbol={coin.symbol}
+                price={coin.current_price} />)
+                } 
+            responsive= {responsive}
+                />
         </div>
     );
 };
