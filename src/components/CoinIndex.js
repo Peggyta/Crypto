@@ -11,6 +11,7 @@ const CoinIndex = ({image, price, symbol}) => {
                 <span className={styles.price}>{price.toLocaleString()} $</span>
              </div>
         </div>
+        
     );
 };
 

@@ -25,6 +25,9 @@ const searchedCoins = coins.filter(coin => coin.name.toLowerCase().includes(sear
 
     return (
         <>
+            <div className={styles.textContainer}>
+                <h1>Peggyta Crypto</h1> 
+            </div>
             <input className={styles.input} type="text" placeholder="  search token name" value={search} onChange={searchHandler} />
             <Carousel />
             {

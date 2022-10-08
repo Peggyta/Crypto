@@ -1,7 +1,9 @@
 .container {
-   display: flex;
-   justify-content: end;
-   align-items: center; 
-   margin-top: 50px;
-   cursor: pointer;
-}
+    display: flex;
+    justify-content: center;
+    align-items: 50px;
+    cursor: pointer;
+    margin: auto;
+    width: 70%;
+    height: 250px;
+ }

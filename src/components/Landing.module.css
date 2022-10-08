@@ -3,7 +3,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 50px 0;
+}
+
+.textContainer {
+    text-align: center;
+    color: aliceblue;
 }
 
 .headerContainer {
@@ -48,8 +52,8 @@
 }
 
 .input {
-    width: 320px;
-    margin-top: 50px;
+    width: 300px;
+    margin-top: 5px;
     border: 1px outset rgb(228, 223, 240);
     background-color: rgb(197, 203, 213);
     border-radius: 5px;
@@ -62,3 +66,4 @@
     background: rgb(255, 255, 255);
     box-shadow: rgba(184, 197, 205, 0.24) 0px 3px 8px;
 }
+
