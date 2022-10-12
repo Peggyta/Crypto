@@ -13,6 +13,10 @@ const Landing = () => {
     const[coins, setCoins] = useState([]);
     const[search, setSearch] = useState("");
     const[pageNumber, setPageNumber] = useState(0);
+
+    const coinPerPage = 20;
+    const coinVisited = pageNumber*coinPerPage;
+
     useEffect(() => {
         const fetchAPI = async() => {
             setCoins(await getCoin());
@@ -24,6 +28,20 @@ const searchHandler = event => {
     setSearch(event.target.value)
 }
 const searchedCoins = coins.filter(coin => coin.name.toLowerCase().includes(search.toLowerCase()))
+.slice(coinVisited, coinVisited + coinPerPage).map(coin => <Coin 
+    key={coin.id}
+    name={coin.name}
+    image={coin.image}
+    symbol={coin.symbol}
+    price={coin.current_price}
+    marketCap={coin.market_cap}
+    priceChange={coin.price_change_percentage_24h}
+    />)
+
+    const pageCount = Math.ceil(coins.length / coinPerPage);
+    const changePage = ({ selected }) => {
+        setPageNumber(selected);
+      };
 
     return (
         <>
@@ -42,17 +60,18 @@ const searchedCoins = coins.filter(coin => coin.name.toLowerCase().includes(sear
                         <span className={styles.priceChange}><p>24h</p></span>
                         <span className={styles.marketCap}><p>Mkt Cap</p></span>
                     </div>
-                    {
-                        searchedCoins.map (coin => <Coin 
-                            key={coin.id}
-                            name={coin.name}
-                            image={coin.image}
-                            symbol={coin.symbol}
-                            price={coin.current_price}
-                            marketCap={coin.market_cap}
-                            priceChange={coin.price_change_percentage_24h}
-                            />)
-                    }
+                    {searchedCoins}
+                <ReactPaginate
+                    previousLabel={"previous"}
+                    nextLabel={"next"}
+                    pageCount={pageCount}
+                    onPageChange={changePage}
+                    containerClassName={"paginationBttns"}
+                    previousLinkClassName={"previousBttn"}
+                    nextLinkClassName={"nextBttn"}
+                    disabledClassName={"paginationDisabled"}
+                    activeClassName={"paginationActive"}
+                />
                 </div> : 
                     <Loading />
             }
