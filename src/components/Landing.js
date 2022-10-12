@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import ReactPaginate from 'react-paginate';
 //API
 import { getCoin } from '../services/api';
 //Components
@@ -11,6 +12,7 @@ import styles from './Landing.module.css';
 const Landing = () => {
     const[coins, setCoins] = useState([]);
     const[search, setSearch] = useState("");
+    const[pageNumber, setPageNumber] = useState(0);
     useEffect(() => {
         const fetchAPI = async() => {
             setCoins(await getCoin());
