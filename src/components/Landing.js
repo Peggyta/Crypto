@@ -14,9 +14,6 @@ const Landing = () => {
     const[search, setSearch] = useState("");
     const[pageNumber, setPageNumber] = useState(0);
 
-    const coinPerPage = 20;
-    const coinVisited = pageNumber*coinPerPage;
-
     useEffect(() => {
         const fetchAPI = async() => {
             setCoins(await getCoin());
@@ -27,6 +24,10 @@ const Landing = () => {
 const searchHandler = event => {
     setSearch(event.target.value)
 }
+
+const coinPerPage = 20;
+const coinVisited = pageNumber*coinPerPage;
+
 const searchedCoins = coins.filter(coin => coin.name.toLowerCase().includes(search.toLowerCase()))
 .slice(coinVisited, coinVisited + coinPerPage).map(coin => <Coin 
     key={coin.id}
@@ -60,18 +61,21 @@ const searchedCoins = coins.filter(coin => coin.name.toLowerCase().includes(sear
                         <span className={styles.priceChange}><p>24h</p></span>
                         <span className={styles.marketCap}><p>Mkt Cap</p></span>
                     </div>
+                    
                     {searchedCoins}
-                <ReactPaginate
-                    previousLabel={"previous"}
-                    nextLabel={"next"}
-                    pageCount={pageCount}
-                    onPageChange={changePage}
-                    containerClassName={"paginationBttns"}
-                    previousLinkClassName={"previousBttn"}
-                    nextLinkClassName={"nextBttn"}
-                    disabledClassName={"paginationDisabled"}
-                    activeClassName={"paginationActive"}
-                />
+                    <div>
+                    <ReactPaginate
+                        previousLabel={"previous"}
+                        nextLabel={"next"}
+                        pageCount={pageCount}
+                        onPageChange={changePage}
+                        containerClassName={styles.paginationBttns}
+                        previousLinkClassName={styles.previousBttn}
+                        disabledClassName={styles.paginationDisabled}
+                        activeClassName={styles.paginationActive}
+                    />
+                    </div>
+
                 </div> : 
                     <Loading />
             }

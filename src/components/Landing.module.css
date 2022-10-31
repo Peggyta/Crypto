@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .textContainer {
@@ -67,4 +67,40 @@
     background: rgb(255, 255, 255);
     box-shadow: rgba(184, 197, 205, 0.24) 0px 3px 8px;
 }
+
+.paginationBttns {
+    color: aquamarine;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: center;
+    width: 80%;
+    height: 50px;
+    margin-top: 20px;
+}
+
+.paginationBttns a {
+    padding: 12px;
+    margin: 5px;
+}
+
+.paginationBttns a:hover {
+    background-color: rgb(97, 101, 77);
+    color: orange;
+    border-radius: 15px;
+}
+
+.paginationActive a {
+    color: white;
+    border-radius: 15px;
+    background-color: rgb(77, 101, 101);
+}
+
+.paginationDisabled a {
+    color: rgb(203, 203, 203);
+    background-color: grey;
+    border-radius: 15px;
+  }
+
 
